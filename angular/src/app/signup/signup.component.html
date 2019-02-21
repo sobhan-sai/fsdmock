@@ -1,0 +1,66 @@
+<!-- <h1>Registration Page</h1> -->
+<!-- <div class="row justify-content-center mt-5"> -->
+<!-- <div class="card "style="width:35rem; align:center">
+  <div class="card-header"style="text-align:center;">
+    <strong>Register Here</strong>
+  </div>
+<div class="container" style="max-width:500px;"> -->
+<form class="need-validation p-2" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+<div class="" *ngIf="form.errors">
+  {{errorMessage}}
+</div>
+<div class="form-group">
+<label for="firstName">First name</label>
+<input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Enter First Name" [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid,'is-valid':form.get('firstName').touched && form.get('firstName').valid}">
+<div class="valid-feedback">
+  Looks Good!
+</div>
+<div class="invalid-feedback">
+  <div>First Name is required with size of 1 to 50 charecters</div>
+</div>
+</div>
+<div class="form-group">
+  <label for="username">User name</label>
+  <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Enter User Name" [ngClass]="{'is-invalid':form.get('userName').touched && form.get('userName').invalid,'is-valid':form.get('userName').touched && form.get('userName').valid}">
+  <div class="valid-feedback">
+    Looks Good!
+  </div>
+  <div class="invalid-feedback">
+    <div>User Name is required with size of 1 to 50 charecters</div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input type="text" class="form-control" id="email" formControlName="email" placeholder="Enter email" [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid,'is-valid':form.get('email').touched && form.get('email').valid}" >
+    <div class="valid-feedback">
+      Looks Good!
+    </div>
+    <div class="invalid-feedback">
+      <div>Enter a valid Email</div>
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="text" class="form-control" id="password" formControlName="password" placeholder="Enter Password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid,'is-valid':form.get('password').touched && form.get('password').valid}">
+      <div class="valid-feedback">
+        Looks Good!
+      </div>
+      <div class="invalid-feedback">
+        <div>Password is required with size of 8 to 50 charecters</div>
+      </div>
+      </div>
+     
+<div class="form-group">
+  <button class="btn btn-primary" id="signBtn" [disabled]="!form.valid">Register</button>
+</div>
+<div class="form-group">
+  <a href="">Already Have an Account?</a>
+</div>
+
+</form>
+<!-- </div>
+</div>
+</div> -->
+
+
+

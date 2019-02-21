@@ -1,0 +1,22 @@
+<button type="button" class="btn btn-primary"(click)="searchHistory()">SearchHistory</button>
+<div class="container">
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th scope="col">Serial no</th>
+    <th scope="col">Searched Word</th>
+    <th scope="col">Searched Time</th>
+    <th scope="col">Action</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let search of searchedWords  let i = index">
+    <td>{{i+1}}</td>
+     <td>{{search.searchedWord}}</td>
+     <td>{{search.date}}</td>
+     <td><button type="button" (click)="deleteArticle(search)">Delete</button></td>
+  </tr>
+</tbody>
+
+</table>
+</div>

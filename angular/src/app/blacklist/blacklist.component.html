@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="text-center">
+  <form [formGroup]="form" class="row mx-auto my-2 col-lg-6 col-md-8 col-sm-8" (ngSubmit)="blacklist()">
+    <input type="text" formControlName="user" class="form-control col-10 my-1" name="search"/>
+    <button class="btn btn-primary ml-2 my-1" type="submit" [disabled]="form.get('user').errors">Search</button>
+  </form>
+  </div>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Serial no</th>
+      <th scope="col">Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">UserEmail</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let search of searchedWords  let i = index">
+      <td>{{i+1}}</td>
+      <td>{{search.name}}</td>
+       <td>{{search.userName}}</td>
+       <td>{{search.userEmail}}</td>
+       <td><button type="button" class="btn btn-danger" (click)="deleteUser(i,search)">Block</button></td>
+    </tr>
+  </tbody>  
+  </table>
+  </div>
+
